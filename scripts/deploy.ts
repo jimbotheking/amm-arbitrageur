@@ -3,7 +3,7 @@ import { ethers, run } from 'hardhat';
 import deployer from '../.secret';
 
 // WBNB address on BSC, WETH address on ETH
-const WethAddr = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
+const WethAddr = '0xcF664087a5bB0237a0BAd6742852ec6c8d69A27a';
 
 async function main() {
   await run('compile');
