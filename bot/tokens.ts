@@ -8,20 +8,20 @@ import { ethers } from 'hardhat';
 import log from './log';
 
 export enum Network {
-  BSC = 'bsc',
+  ONE = 'one',
 }
 
 const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
 const bscBaseTokens: Tokens = {
-  wbnb: { symbol: 'WBNB', address: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c' },
+  wbnb: { symbol: 'WONE', address: '0x7466d7d0C21Fa05F32F5a0Fa27e12bdC06348Ce2' },
   usdt: { symbol: 'USDT', address: '0x55d398326f99059ff775485246999027b3197955' },
-  busd: { symbol: 'BUSD', address: '0xe9e7cea3dedca5984780bafc599bd69add087d56' },
+  busd: { symbol: 'BUSD', address: '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee' },
 };
 
 const bscQuoteTokens: Tokens = {
-  eth: { symbol: 'ETH', address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8' },
-  btcb: { symbol: 'BTCB', address: '0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c' },
+  eth: { symbol: 'ETH', address: '0x1E120B3b4aF96e7F394ECAF84375b1C661830013' },
+  btcb: { symbol: 'BTCB', address: '0x6c4387C4f570Aa8cAdcaFFc5E73ecb3D0F8Fc593' },
   cake: { symbol: 'CAKE', address: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82' },
   bake: { symbol: 'BAKE', address: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5' },
   alpaca: { symbol: 'ALPACA', address: '0x8f0528ce5ef7b51152a59745befdd91d97091d2f' },
@@ -78,16 +78,16 @@ const bscQuoteTokens: Tokens = {
 };
 
 const bscDexes: AmmFactories = {
-  pancake: '0xBCfCcbde45cE874adCB698cC183deBcF17952812',
-  mdex: '0x3CD1C46068dAEa5Ebb0d3f55F6915B10648062B8',
-  bakery: '0x01bF7C66c6BD861915CdaaE475042d3c4BaE16A7',
+  pancake: '0x021AeF70c404aa9d70b71C615F17aB3a4038851A',
+  mdex: '0xBdEBd3af1723BBB33A8aDB68e3e77d65D7266F59',
+  bakery: '0xBdEBd3af1723BBB33A8aDB68e3e77d65D7266F59',
   julswap: '0x553990F2CBA90272390f62C5BDb1681fFc899675',
   // value: '0x1B8E12F839BD4e73A47adDF76cF7F0097d74c14C',
 };
 
 function getFactories(network: Network): AmmFactories {
   switch (network) {
-    case Network.BSC:
+    case Network.ONE:
       return bscDexes;
     default:
       throw new Error(`Unsupported network:${network}`);
@@ -96,7 +96,7 @@ function getFactories(network: Network): AmmFactories {
 
 export function getTokens(network: Network): [Tokens, Tokens] {
   switch (network) {
-    case Network.BSC:
+    case Network.ONE:
       return [bscBaseTokens, bscQuoteTokens];
     default:
       throw new Error(`Unsupported network:${network}`);
